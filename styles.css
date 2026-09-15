@@ -71,16 +71,12 @@ h1{font-size:64px}h2{font-size:42px}
 .choice span{color:var(--rose);margin-right:8px}
 
 /* ===== CAT ===== */
-.cat-wrap{position:absolute;z-index:2;pointer-events:none}
-.cat{width:100%;display:block;border-radius:16px;border:3px solid #fff;box-shadow:0 10px 25px rgba(84,42,53,.15);pointer-events:none}
-.cat-bottom{width:180px;left:50%;bottom:5%;transform:translateX(-50%)}
-.cat-center{width:160px;left:50%;bottom:6%;transform:translateX(-50%)}
-.cat-left{width:140px;left:3%;bottom:4%}
-.cat-right{width:140px;right:3%;bottom:4%}
-.cat-peek-left{width:110px;left:-15px;bottom:3%;transform:rotate(5deg)}
-.cat-peek-right{width:110px;right:-15px;bottom:3%;transform:rotate(-5deg)}
-.cat-walk{width:150px;left:50%;bottom:5%;transform:translateX(-50%)}
-.cat-card{width:120px;left:50%;bottom:2%;transform:translateX(-50%)}
+.cat-wrap{position:absolute;z-index:2;pointer-events:none;aspect-ratio:1}
+.cat{width:100%;height:100%;display:block;object-fit:cover;object-position:center;pointer-events:none;border-radius:16px;border:3px solid #fff;box-shadow:0 10px 25px rgba(84,42,53,.15)}
+.cat-bl{width:90px;left:8px;bottom:10px}
+.cat-br{width:90px;right:8px;bottom:10px}
+.cat-pl{width:75px;left:-5px;bottom:5px;transform:rotate(5deg)}
+.cat-pr{width:75px;right:-5px;bottom:5px;transform:rotate(-5deg)}
 
 .cat-float{animation:catFloat 3s ease-in-out infinite}
 .cat-bounce{animation:catBounce .8s ease-in-out infinite}
@@ -98,7 +94,7 @@ h1{font-size:64px}h2{font-size:42px}
 
 /* ===== POLAROID PHOTOS ===== */
 .polaroid{background:#fff;padding:12px 12px 36px;box-shadow:0 10px 30px rgba(0,0,0,.15);border-radius:4px;max-width:260px;margin:0 auto;position:relative}
-.polaroid img{width:100%;height:220px;object-fit:cover;border-radius:2px}
+.polaroid img{width:100%;height:auto;display:block;border-radius:2px}
 .polaroid-caption{text-align:center;font-family:'Caveat',cursive;font-size:18px;color:var(--muted);margin-top:8px}
 .polaroid{opacity:0}
 .screen.active .photo-anim-slide{animation:photoSlide 1s ease-out .3s both}
@@ -157,19 +153,19 @@ h1{font-size:64px}h2{font-size:42px}
 @keyframes letterHeart{0%{transform:translateY(0) scale(0);opacity:0}20%{transform:translateY(-10px) scale(1);opacity:1}100%{transform:translateY(-60px) scale(.6);opacity:0}}
 
 /* ===== HUG SCENE ===== */
-.hug-bg{position:absolute;inset:0;background:radial-gradient(circle at center,#fff5f7 0%,#f8c8d2 50%,#f6a7b9 100%);animation:hugBgBrighten 4s ease-out forwards}
+.hug-bg{position:absolute;inset:0;background:radial-gradient(circle at center,#fff5f7 0%,#f8c8d2 50%,#f6a7b9 100%);animation:hugBgBrighten 4s ease-out forwards;z-index:0}
 @keyframes hugBgBrighten{from{filter:brightness(.7)}to{filter:brightness(1.1)}}
-.hug-scene{display:flex;flex-direction:column;align-items:center;gap:16px}
-.hug-cat-container{position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center}
-.hug-glow{position:absolute;inset:-50%;background:radial-gradient(circle,rgba(255,200,210,.7) 0%,transparent 60%);animation:hugGlow 2s ease-in-out 2s infinite}
+.hug-cat-container{position:absolute;inset:0;overflow:hidden;z-index:1}
+.hug-glow{position:absolute;inset:0;background:radial-gradient(circle,rgba(255,200,210,.5) 0%,transparent 70%);animation:hugGlow 2s ease-in-out 2s infinite;z-index:2}
 @keyframes hugGlow{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.15);opacity:.9}}
-.hug-cat{width:80px;border-radius:20px;border:3px solid #fff;box-shadow:0 10px 25px rgba(0,0,0,.15);animation:hugApproach 3s ease-out .5s forwards;opacity:0}
-@keyframes hugApproach{0%{width:60px;transform:translateY(80px) scale(.7);opacity:.3}60%{width:130px;transform:translateY(0) scale(1);opacity:1}100%{width:150px;transform:translateY(0) scale(1.05);opacity:1}}
-.hug-hearts{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.hug-cat{width:100%;height:100%;object-fit:cover;object-position:center;animation:hugApproach 4s ease-out .5s forwards;opacity:0}
+@keyframes hugApproach{0%{transform:scale(.3);opacity:0}50%{transform:scale(.6);opacity:.8}100%{transform:scale(1);opacity:1}}
+.hug-hearts{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:3}
 .hug-heart{position:absolute;bottom:50%;animation:hugHeartFloat 3s ease-out forwards;pointer-events:none}
 @keyframes hugHeartFloat{0%{transform:translateY(0) scale(0);opacity:0}20%{transform:translateY(-20px) scale(1);opacity:1}100%{transform:translateY(-120px) scale(.8);opacity:0}}
+.hug-scene{position:relative;z-index:4}
 .hug-text{text-align:center;min-height:80px}
-.hug-line{font-family:'Caveat',cursive;font-size:28px;color:#fff;margin:6px 0;opacity:0;transform:translateY(10px);transition:opacity .8s ease,transform .8s ease;text-shadow:0 2px 10px rgba(0,0,0,.15)}
+.hug-line{font-family:'Caveat',cursive;font-size:28px;color:#fff;margin:6px 0;opacity:0;transform:translateY(10px);transition:opacity .8s ease,transform .8s ease;text-shadow:0 2px 10px rgba(0,0,0,.5)}
 .hug-line.show{opacity:1;transform:none}
 
 /* ===== CONFETTI ===== */
@@ -185,5 +181,5 @@ h1{font-size:64px}h2{font-size:42px}
 .date-badge{display:inline-block;background:var(--rose);color:#fff;font-family:'Caveat',cursive;font-size:24px;font-weight:700;padding:8px 20px;border-radius:999px;margin:16px 0;box-shadow:0 5px 15px rgba(217,87,115,.3)}
 
 /* ===== RESPONSIVE ===== */
-@media(max-height:700px){h1{font-size:52px}h2{font-size:36px}.cat-bottom{width:150px}.cat-center{width:130px}.polaroid img{height:180px}.card-title{font-size:38px}.speech{font-size:22px}.hug-line{font-size:24px}}
-@media(max-width:360px){h1{font-size:48px}.card-title{font-size:38px}.polaroid{max-width:220px}.polaroid img{height:180px}}
+@media(max-height:700px){h1{font-size:52px}h2{font-size:36px}.card-title{font-size:38px}.speech{font-size:22px}.hug-line{font-size:24px}}
+@media(max-width:360px){h1{font-size:48px}.card-title{font-size:38px}.polaroid{max-width:220px}}
