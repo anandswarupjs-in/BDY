@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>September 25 ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--rose:#d95773;--pink:#f4a5b5;--blush:#fde5e9;--paper:#fffaf5;--ink:#38272c;--muted:#8e6f77}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:'DM Sans',sans-serif;background:#ead1d7;color:var(--ink)}
+.app{position:relative;width:min(100%,480px);height:100dvh;margin:auto;overflow:hidden;background:var(--paper);box-shadow:0 0 50px #6c3a4630}
+.screen{position:absolute;inset:0;padding:28px;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(22px) scale(.985);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.75,.2,1)}
+.screen.active{opacity:1;pointer-events:auto;transform:none}.papergrid{background-color:var(--paper);background-image:linear-gradient(#efb4c122 1px,transparent 1px),linear-gradient(90deg,#efb4c122 1px,transparent 1px);background-size:25px 25px}
+.soft{background:radial-gradient(circle at 20% 20%,#fff 0 10%,transparent 35%),linear-gradient(145deg,#ffecef,#f8c8d2 60%,#f6a7b9)}
+.blob{position:absolute;width:125%;height:65%;left:-12%;top:18%;background:#ed7892;border-radius:47% 53% 52% 48%/44% 39% 61% 56%;transform:rotate(-8deg);opacity:.95}
+.blob:after{content:'';position:absolute;inset:0;background:#fff2;filter:blur(18px);border-radius:inherit}
+.content{position:relative;z-index:3;width:100%;text-align:center}.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700;color:var(--rose);margin-bottom:12px}.white{color:white}.sub{max-width:320px;margin:16px auto 0;font-size:14px;line-height:1.65;color:#6d555c}.white-sub{color:#fff;opacity:.9}
+h1,h2,.hand{font-family:Caveat,cursive;font-weight:700;line-height:.92;margin:0}h1{font-size:72px}h2{font-size:54px}
+.btn{border:0;border-radius:999px;padding:14px 25px;margin-top:24px;font:600 14px 'DM Sans';cursor:pointer;background:#fff;color:var(--rose);box-shadow:0 10px 25px #74344625;transition:.2s}.btn:active{transform:scale(.94)}.btn.dark{background:var(--rose);color:white}.btn.outline{background:#ffffff70;color:var(--rose);border:1px solid #d9577340;box-shadow:none}
+.cat{position:absolute;z-index:2;width:205px;left:50%;bottom:7%;transform:translateX(-50%);filter:drop-shadow(0 18px 15px #542a3525);animation:catFloat 3s ease-in-out infinite;pointer-events:none}.cat.small{width:150px;bottom:5%;left:18%;animation:catPeek 4s ease-in-out infinite}.cat.right{left:auto;right:4%;width:175px;bottom:3%}
+@keyframes catFloat{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1deg)}50%{transform:translateX(-50%) translateY(-10px) rotate(1deg)}}
+@keyframes catPeek{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(2deg)}}
+.speech{display:inline-block;background:#fffaf5;border:1px solid #d9577330;padding:14px 18px;border-radius:22px;box-shadow:0 12px 30px #65334018;font-family:Caveat;font-size:25px;position:relative;animation:bubble .8s both}.speech:after{content:'';position:absolute;bottom:-9px;left:35px;border-width:9px 8px 0;border-style:solid;border-color:#fffaf5 transparent transparent}.speech b{color:var(--rose)}@keyframes bubble{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:none}}
+.lock{width:min(100%,340px);text-align:center}.lockIcon{font-size:55px;margin-bottom:8px}.pass{width:100%;padding:14px 18px;border:1px solid #d9577340;border-radius:14px;background:#fff;outline:none;text-align:center;font-size:16px;letter-spacing:5px;margin-top:20px}.error{height:20px;color:var(--rose);font-size:12px;margin-top:7px}
+.progress{position:absolute;z-index:20;top:14px;left:18px;right:18px;height:3px;background:#d9577317;border-radius:9px}.progress span{display:block;height:100%;width:0;background:var(--rose);border-radius:9px;transition:.7s}
+.cards{display:flex;flex-direction:column;gap:12px;margin-top:22px}.choice{border:0;background:#fff7f7;border:1px solid #d9577325;border-radius:18px;padding:14px;font-family:Caveat;font-size:24px;color:var(--ink);cursor:pointer;box-shadow:0 5px 15px #63323e0c;transition:.25s}.choice:hover{transform:translateX(5px);background:#fff}.choice span{color:var(--rose);margin-right:8px}
+.photoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px auto;max-width:340px}.photo{height:145px;border-radius:18px;overflow:hidden;background:#f8d6de;border:4px solid #fff;box-shadow:0 8px 20px #6a34401c;position:relative}.photo:nth-child(2),.photo:nth-child(4){transform:rotate(2deg)}.photo:nth-child(1),.photo:nth-child(5){transform:rotate(-2deg)}.photo img{width:100%;height:100%;object-fit:cover}.photo label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9e6975;font-size:12px;background:#fff8}.photo input{display:none}
+.gift{width:175px;height:145px;margin:25px auto;position:relative;cursor:pointer;animation:giftFloat 2.8s infinite}.box{position:absolute;bottom:0;left:15px;width:145px;height:92px;background:#e96f89;border-radius:5px 5px 15px 15px}.box:before{content:'';position:absolute;left:59px;width:27px;height:92px;background:#ffd7df}.lid{position:absolute;z-index:3;top:35px;left:8px;width:160px;height:30px;background:#d65372;border-radius:7px;transition:.7s}.bow{position:absolute;z-index:5;left:67px;top:10px;width:42px;height:30px}.bow:before,.bow:after{content:'';position:absolute;width:40px;height:26px;background:#ffd7df;border-radius:90% 15% 80% 20%}.bow:before{left:-26px;transform:rotate(28deg)}.bow:after{right:-26px;transform:scaleX(-1) rotate(28deg)}.gift.open .lid{transform:translateY(-40px) rotate(-8deg)}@keyframes giftFloat{50%{transform:translateY(-8px)}}
+.hug{width:190px;height:190px;margin:15px auto;position:relative;animation:hug 2s infinite}.hug:before{content:'🤗';font-size:150px;position:absolute;inset:0;display:grid;place-items:center;filter:drop-shadow(0 10px 10px #7d30401b)}@keyframes hug{50%{transform:scale(1.08)}}
+.confetti{position:absolute;inset:0;pointer-events:none;z-index:10}.confetti i{position:absolute;width:7px;height:13px;border-radius:3px;top:-20px;animation:drop 2.4s ease-out forwards}@keyframes drop{to{top:105%;transform:rotate(650deg);opacity:0}}
+.note{background:#fffdf8;padding:32px 24px;border:1px solid #d9577325;box-shadow:0 18px 45px #6935421c;transform:rotate(-1.5deg);max-width:350px}.note p{font:25px/1.3 Caveat;margin:15px 0}.paw{font-size:22px}.tiny{font-size:11px;color:var(--muted);margin-top:10px}
+@media(max-height:700px){h1{font-size:58px}h2{font-size:45px}.cat{width:165px}.photo{height:115px}.speech{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="app papergrid">
+<div class="progress"><span id="progress"></span></div>
+
+<section class="screen active" id="s0">
+  <div class="content lock">
+    <div class="lockIcon">🔐</div><div class="eyebrow">private little place</div>
+    <h2>Something is<br>waiting for you…</h2>
+    <p class="sub">Enter the secret code to unlock the birthday surprise.</p>
+    <input id="password" class="pass" type="password" inputmode="numeric" maxlength="10" placeholder="••••••••••">
+    <div class="error" id="error"></div><button class="btn dark" onclick="unlock()">Unlock ♡</button>
+  </div>
+</section>
+
+<section class="screen soft" id="s1">
+  <div class="blob"></div>
+  <div class="content">
+    <div class="eyebrow white">September 25</div>
+    <div class="speech">pssst… <b>hey you!</b><br>guess what? ♡</div>
+    <h1 class="white" style="margin-top:20px">It's your<br>special day!</h1>
+    <p class="sub white-sub">Your tiny birthday guide has arrived. Follow the cat. It knows where the surprises are hiding. 🐾</p>
+    <button class="btn" onclick="go(2)">Let's go →</button>
+  </div>
+  <img class="cat" src="assets/cat.jpg" alt="birthday cat">
+</section>
+
+<section class="screen papergrid" id="s2">
+  <div class="content">
+    <div class="speech">Before we continue…<br><b>how are you today?</b> ♡</div>
+    <div class="cards">
+      <button class="choice" onclick="mood('good')"><span>♥</span> I'm good :)</button>
+      <button class="choice" onclick="mood('tired')"><span>♥</span> A little tired…</button>
+      <button class="choice" onclick="mood('bad')"><span>♥</span> Not so great…</button>
+    </div>
+  </div>
+  <img class="cat small" src="assets/cat.jpg" alt="cat guide">
+</section>
+
+<section class="screen soft" id="s3">
+  <div class="content">
+    <div class="speech" id="moodText">Okay… then let's make today <b>better!</b> ✨</div>
+    <h2 style="color:white;margin-top:25px">A little reminder…</h2>
+    <p class="sub white-sub">Whatever kind of day it has been, you made it here. That's enough reason for a tiny celebration.</p>
+    <div style="font-size:60px;margin:20px">🫶</div>
+    <button class="btn" onclick="go(4)">There's more →</button>
+  </div>
+  <img class="cat" src="assets/cat.jpg" alt="cat guide">
+</section>
+
+<section class="screen papergrid" id="s4">
+  <div class="content">
+    <div class="eyebrow">the memory corner</div><h2>A few little<br>moments ♡</h2>
+    <p class="sub">Replace these five spaces with your favourite photos. The page keeps the same soft scrapbook aesthetic.</p>
+    <div class="photoGrid">
+      <div class="photo"><img src="assets/photo1.jpg" onerror="this.style.display='none'"><label>PHOTO 1</label></div>
+      <div class="photo"><img src="assets/photo2.jpg" onerror="this.style.display='none'"><label>PHOTO 2</label></div>
+      <div class="photo"><img src="assets/photo3.jpg" onerror="this.style.display='none'"><label>PHOTO 3</label></div>
+      <div class="photo"><img src="assets/photo4.jpg" onerror="this.style.display='none'"><label>PHOTO 4</label></div>
+      <div class="photo" style="grid-column:1/-1"><img src="assets/photo5.jpg" onerror="this.style.display='none'"><label>PHOTO 5</label></div>
+    </div>
+    <button class="btn dark" onclick="go(5)">Keep going →</button>
+  </div>
+</section>
+
+<section class="screen soft" id="s5">
+  <div class="content">
+    <div class="speech">The cat found <b>something!</b><br>Don't touch it yet… 👀</div>
+    <h2 class="white" style="margin-top:20px">There's a gift<br>for you.</h2>
+    <div class="gift" id="gift" onclick="openGift()"><div class="box"></div><div class="lid"></div><div class="bow"></div></div>
+    <div class="eyebrow white" id="giftHint">tap the gift</div>
+  </div>
+  <img class="cat right" src="assets/cat.jpg" alt="cat guide">
+</section>
+
+<section class="screen papergrid" id="s6">
+  <div class="content">
+    <div class="eyebrow">one little question</div>
+    <div class="speech">The cat wants to know…</div>
+    <h2 style="margin-top:25px">Will you let me stay by your side for the rest of your birthdays?</h2>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px">
+      <button class="btn dark" onclick="answer(true)">Yes ♡</button>
+      <button class="btn outline" onclick="answer(false)">No</button>
+    </div>
+    <p class="tiny" id="answerText"></p>
+  </div>
+  <img class="cat small" src="assets/cat.jpg" alt="cat guide">
+</section>
+
+<section class="screen soft" id="s7">
+  <div class="content">
+    <div class="eyebrow white">last gift</div><div class="hug"></div>
+    <h1 class="white">A virtual hug<br>for you. ♡</h1>
+    <p class="sub white-sub">Consider this the warmest little pause in the middle of your day. 🫂</p>
+    <button class="btn" onclick="go(8)">One last note →</button>
+  </div>
+</section>
+
+<section class="screen papergrid" id="s8">
+  <div class="content">
+    <div class="note">
+      <div class="eyebrow">September 25 · birthday edition</div>
+      <h2>Happy Birthday! 🎂</h2>
+      <p>May your days be filled with happiness, kindness, ridiculous laughter, beautiful memories, and people who make you feel at home.</p>
+      <div class="hand" style="font-size:29px;color:var(--rose)">You are very special. ♡</div>
+      <div class="paw">🐾 🐾 🐾</div>
+    </div>
+    <button class="btn dark" onclick="restart()">Replay ↻</button>
+  </div>
+  <div class="confetti" id="confetti"></div>
+</section>
+</div>
+<script>
+const PASS='2352026';let current=0;const total=9;
+function unlock(){const p=document.getElementById('password');if(p.value===PASS){go(1)}else{document.getElementById('error').textContent='That code isn't right… try again ♡';p.value='';p.focus()}}
+document.getElementById('password').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');current=n;document.getElementById('progress').style.width=(n/(total-1)*100)+'%';if(n===8)confetti()}
+function mood(x){const t=document.getElementById('moodText');t.innerHTML=x==='good'?'Yay! Then let\'s make it <b>even better!</b> ✨':x==='tired'?'Then the cat prescribes a tiny dose of <b>birthday happiness.</b> 🐾':'Then stay here for a moment. <b>Something sweet is coming.</b> ♡';setTimeout(()=>go(3),450)}
+function openGift(){const g=document.getElementById('gift');if(g.classList.contains('open'))return;g.classList.add('open');document.getElementById('giftHint').textContent='surprise unlocked ✨';setTimeout(()=>go(6),1000)}
+function answer(yes){document.getElementById('answerText').textContent=yes?'The cat is very happy. 🥹♡':'The cat accepts the answer… but will still send birthday wishes. 🐾♡';setTimeout(()=>go(7),900)}
+function confetti(){const box=document.getElementById('confetti');box.innerHTML='';for(let i=0;i<85;i++){const q=document.createElement('i');q.style.left=Math.random()*100+'%';q.style.animationDelay=Math.random()*.8+'s';q.style.background=['#d95773','#f4a5b5','#f5cc75','#fff','#b6d9c6'][Math.floor(Math.random()*5)];q.style.transform=`rotate(${Math.random()*180}deg)`;box.appendChild(q)}}
+function restart(){document.getElementById('gift').classList.remove('open');document.getElementById('giftHint').textContent='tap the gift';go(0);document.getElementById('password').value=''}
+</script>
+</body>
+</html>
