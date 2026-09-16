@@ -1,158 +1,1310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>September 25 ♡</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
-:root{--rose:#d95773;--pink:#f4a5b5;--blush:#fde5e9;--paper:#fffaf5;--ink:#38272c;--muted:#8e6f77}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:'DM Sans',sans-serif;background:#ead1d7;color:var(--ink)}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>September 25 ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@600;700&family=Mali:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* ===== VARIABLES ===== */
+:root{
+  --rose:#d95773;--pink:#f4a5b5;--blush:#fde5e9;--paper:#fffaf5;
+  --ink:#38272c;--muted:#8e6f77;--gold:#f5cc75;--sage:#b6d9c6;
+}
+
+/* ===== RESET ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:'DM Sans',sans-serif;background:#ead1d7;color:var(--ink)}
+
+/* ===== APP CONTAINER ===== */
 .app{position:relative;width:min(100%,480px);height:100dvh;margin:auto;overflow:hidden;background:var(--paper);box-shadow:0 0 50px #6c3a4630}
-.screen{position:absolute;inset:0;padding:28px;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(22px) scale(.985);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.75,.2,1)}
-.screen.active{opacity:1;pointer-events:auto;transform:none}.papergrid{background-color:var(--paper);background-image:linear-gradient(#efb4c122 1px,transparent 1px),linear-gradient(90deg,#efb4c122 1px,transparent 1px);background-size:25px 25px}
+
+/* ===== SCREENS ===== */
+.screen{position:absolute;inset:0;padding:28px;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(22px) scale(.985);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.75,.2,1);overflow:hidden}
+.screen.active{opacity:1;pointer-events:auto;transform:none}
+
+/* ===== BACKGROUNDS ===== */
+.papergrid{background-color:var(--paper);background-image:linear-gradient(#efb4c122 1px,transparent 1px),linear-gradient(90deg,#efb4c122 1px,transparent 1px);background-size:25px 25px}
 .soft{background:radial-gradient(circle at 20% 20%,#fff 0 10%,transparent 35%),linear-gradient(145deg,#ffecef,#f8c8d2 60%,#f6a7b9)}
-.blob{position:absolute;width:125%;height:65%;left:-12%;top:18%;background:#ed7892;border-radius:47% 53% 52% 48%/44% 39% 61% 56%;transform:rotate(-8deg);opacity:.95}
+.blob{position:absolute;width:145%;height:82%;left:-22.5%;top:13%;background:#ed7892;border-radius:47% 53% 52% 48%/44% 39% 61% 56%;transform:rotate(-8deg);opacity:.95}
 .blob:after{content:'';position:absolute;inset:0;background:#fff2;filter:blur(18px);border-radius:inherit}
-.content{position:relative;z-index:3;width:100%;text-align:center}.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700;color:var(--rose);margin-bottom:12px}.white{color:white}.sub{max-width:320px;margin:16px auto 0;font-size:14px;line-height:1.65;color:#6d555c}.white-sub{color:#fff;opacity:.9}
-h1,h2,.hand{font-family:Caveat,cursive;font-weight:700;line-height:.92;margin:0}h1{font-size:72px}h2{font-size:54px}
-.btn{border:0;border-radius:999px;padding:14px 25px;margin-top:24px;font:600 14px 'DM Sans';cursor:pointer;background:#fff;color:var(--rose);box-shadow:0 10px 25px #74344625;transition:.2s}.btn:active{transform:scale(.94)}.btn.dark{background:var(--rose);color:white}.btn.outline{background:#ffffff70;color:var(--rose);border:1px solid #d9577340;box-shadow:none}
-.cat{position:absolute;z-index:2;width:205px;left:50%;bottom:7%;transform:translateX(-50%);filter:drop-shadow(0 18px 15px #542a3525);animation:catFloat 3s ease-in-out infinite;pointer-events:none}.cat.small{width:150px;bottom:5%;left:18%;animation:catPeek 4s ease-in-out infinite}.cat.right{left:auto;right:4%;width:175px;bottom:3%}
-@keyframes catFloat{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1deg)}50%{transform:translateX(-50%) translateY(-10px) rotate(1deg)}}
-@keyframes catPeek{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(2deg)}}
-.speech{display:inline-block;background:#fffaf5;border:1px solid #d9577330;padding:14px 18px;border-radius:22px;box-shadow:0 12px 30px #65334018;font-family:Caveat;font-size:25px;position:relative;animation:bubble .8s both}.speech:after{content:'';position:absolute;bottom:-9px;left:35px;border-width:9px 8px 0;border-style:solid;border-color:#fffaf5 transparent transparent}.speech b{color:var(--rose)}@keyframes bubble{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:none}}
-.lock{width:min(100%,340px);text-align:center}.lockIcon{font-size:55px;margin-bottom:8px}.pass{width:100%;padding:14px 18px;border:1px solid #d9577340;border-radius:14px;background:#fff;outline:none;text-align:center;font-size:16px;letter-spacing:5px;margin-top:20px}.error{height:20px;color:var(--rose);font-size:12px;margin-top:7px}
-.progress{position:absolute;z-index:20;top:14px;left:18px;right:18px;height:3px;background:#d9577317;border-radius:9px}.progress span{display:block;height:100%;width:0;background:var(--rose);border-radius:9px;transition:.7s}
-.cards{display:flex;flex-direction:column;gap:12px;margin-top:22px}.choice{border:0;background:#fff7f7;border:1px solid #d9577325;border-radius:18px;padding:14px;font-family:Caveat;font-size:24px;color:var(--ink);cursor:pointer;box-shadow:0 5px 15px #63323e0c;transition:.25s}.choice:hover{transform:translateX(5px);background:#fff}.choice span{color:var(--rose);margin-right:8px}
-.photoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px auto;max-width:340px}.photo{height:145px;border-radius:18px;overflow:hidden;background:#f8d6de;border:4px solid #fff;box-shadow:0 8px 20px #6a34401c;position:relative}.photo:nth-child(2),.photo:nth-child(4){transform:rotate(2deg)}.photo:nth-child(1),.photo:nth-child(5){transform:rotate(-2deg)}.photo img{width:100%;height:100%;object-fit:cover}.photo label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9e6975;font-size:12px;background:#fff8}.photo input{display:none}
-.gift{width:175px;height:145px;margin:25px auto;position:relative;cursor:pointer;animation:giftFloat 2.8s infinite}.box{position:absolute;bottom:0;left:15px;width:145px;height:92px;background:#e96f89;border-radius:5px 5px 15px 15px}.box:before{content:'';position:absolute;left:59px;width:27px;height:92px;background:#ffd7df}.lid{position:absolute;z-index:3;top:35px;left:8px;width:160px;height:30px;background:#d65372;border-radius:7px;transition:.7s}.bow{position:absolute;z-index:5;left:67px;top:10px;width:42px;height:30px}.bow:before,.bow:after{content:'';position:absolute;width:40px;height:26px;background:#ffd7df;border-radius:90% 15% 80% 20%}.bow:before{left:-26px;transform:rotate(28deg)}.bow:after{right:-26px;transform:scaleX(-1) rotate(28deg)}.gift.open .lid{transform:translateY(-40px) rotate(-8deg)}@keyframes giftFloat{50%{transform:translateY(-8px)}}
-.hug{width:190px;height:190px;margin:15px auto;position:relative;animation:hug 2s infinite}.hug:before{content:'🤗';font-size:150px;position:absolute;inset:0;display:grid;place-items:center;filter:drop-shadow(0 10px 10px #7d30401b)}@keyframes hug{50%{transform:scale(1.08)}}
-.confetti{position:absolute;inset:0;pointer-events:none;z-index:10}.confetti i{position:absolute;width:7px;height:13px;border-radius:3px;top:-20px;animation:drop 2.4s ease-out forwards}@keyframes drop{to{top:105%;transform:rotate(650deg);opacity:0}}
-.note{background:#fffdf8;padding:32px 24px;border:1px solid #d9577325;box-shadow:0 18px 45px #6935421c;transform:rotate(-1.5deg);max-width:350px}.note p{font:25px/1.3 Caveat;margin:15px 0}.paw{font-size:22px}.tiny{font-size:11px;color:var(--muted);margin-top:10px}
-@media(max-height:700px){h1{font-size:58px}h2{font-size:45px}.cat{width:165px}.photo{height:115px}.speech{font-size:22px}}
-</style>
+
+/* ===== PROGRESS BAR ===== */
+.progress{position:absolute;z-index:20;top:14px;left:18px;right:56px;height:3px;background:rgba(217,87,115,.1);border-radius:9px}
+.progress span{display:block;height:100%;width:0;background:var(--rose);border-radius:9px;transition:width .7s ease}
+
+/* ===== MUSIC BUTTON ===== */
+.music-btn{position:absolute;top:10px;right:10px;z-index:50;width:36px;height:36px;border:none;border-radius:50%;background:rgba(255,255,255,.85);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.12);backdrop-filter:blur(4px);transition:transform .2s}
+.music-btn:active{transform:scale(.9)}
+
+/* ===== PARTICLES LAYER ===== */
+.particles-layer{position:absolute;inset:0;pointer-events:none;z-index:100;overflow:hidden}
+
+/* ===== TYPOGRAPHY ===== */
+.content{position:relative;z-index:3;width:100%;text-align:center}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;color:var(--rose);margin-bottom:14px;position:relative;z-index:10}
+.screen.soft .eyebrow{color:var(--rose)}
+.screen.soft .eyebrow.white{color:var(--rose)}
+.white{color:#fff}
+.sub{max-width:320px;margin:16px auto 0;font-size:14px;line-height:1.65;color:#6d555c}
+.white-sub{color:#fff;opacity:.9}
+.tiny{font-size:11px;color:var(--muted);margin-top:10px}
+h1,h2,.hand{font-family:'Caveat',cursive;font-weight:700;line-height:.92}
+h1{font-size:64px}h2{font-size:42px}
+
+/* ===== REVEAL ANIMATION ===== */
+.reveal{opacity:0;transform:translateY(15px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* ===== BUTTONS ===== */
+.btn{border:0;border-radius:999px;padding:14px 25px;margin-top:24px;font:600 14px 'DM Sans';cursor:pointer;background:#fff;color:var(--rose);box-shadow:0 10px 25px #74344625;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px #74344632}
+.btn:active{transform:scale(.94)}
+.btn.dark{background:var(--rose);color:#fff}
+.btn.outline{background:rgba(255,255,255,.4);color:var(--rose);border:1px solid rgba(217,87,115,.25);box-shadow:none}
+
+/* ===== SPEECH BUBBLE ===== */
+.speech{display:inline-block;background:#fffaf5;border:1px solid rgba(217,87,115,.18);padding:14px 18px;border-radius:22px;box-shadow:0 12px 30px #65334018;font-family:'Caveat',cursive;font-size:25px;position:relative}
+.speech:after{content:'';position:absolute;bottom:-9px;left:35px;border-width:9px 8px 0;border-style:solid;border-color:#fffaf5 transparent transparent}
+.speech b{color:var(--rose)}
+
+/* ===== LOCK SCREEN ===== */
+.lock{width:min(100%,340px);text-align:center}
+.lockIcon{font-size:55px;margin-bottom:8px}
+.pass{width:100%;padding:14px 18px;border:1px solid #d9577340;border-radius:14px;background:#fff;outline:none;text-align:center;font-size:20px;letter-spacing:6px;margin-top:20px;font-family:'DM Sans',sans-serif;color:var(--ink)}
+.pass:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(217,87,115,.12)}
+.error{height:20px;color:var(--rose);font-size:12px;margin-top:7px}
+
+/* ===== CAT CORNER SYSTEM — 4 corners, square rounded card style ===== */
+/* Base: absolute positioned corner cat, no default corner */
+.cat-corner{position:absolute;z-index:2;pointer-events:none;width:108px}
+/* The cat card — square with rounded corners, shows FULL cat */
+.cat-card{width:108px;height:108px;border-radius:50%;overflow:hidden;background:#fff;border:3px solid rgba(255,255,255,.95);box-shadow:0 8px 22px rgba(78,25,39,.18);position:relative}
+/* object-fit:cover with cropped cat ensures pure circle cat with no black bars */
+.cat-card img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;background:#fff;border-radius:50%}
+/* 4 corner positions */
+.cat-bl{bottom:10px;left:8px}
+.cat-br{bottom:10px;right:8px}
+.cat-tl{top:42px;left:8px}
+.cat-tr{top:42px;right:8px}
+/* Smaller version for photo scenes */
+.cat-corner.cat-sm .cat-card{width:82px;height:82px;border-radius:50%}
+.cat-corner.cat-sm{width:82px}
+/* Corner animations */
+@keyframes catCornerFloat{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-10px) rotate(1.5deg)}}
+@keyframes catCornerBounce{0%,100%{transform:scale(1) rotate(-.5deg)}50%{transform:scale(1.06) rotate(.5deg)}}
+@keyframes catCornerPeek{0%,100%{transform:translateY(0) rotate(-2deg) scale(1)}50%{transform:translateY(-9px) rotate(2deg) scale(1.03)}}
+@keyframes catCornerWalk{0%{transform:rotate(-2deg) translateX(0)}50%{transform:rotate(2deg) translateX(4px)}100%{transform:rotate(-2deg) translateX(0)}}
+.cat-anim-float{animation:catCornerFloat 3s ease-in-out infinite}
+.cat-anim-bounce{animation:catCornerBounce 1.6s ease-in-out infinite}
+.cat-anim-peek{animation:catCornerPeek 3.5s ease-in-out infinite}
+.cat-anim-walk{animation:catCornerWalk 2.5s ease-in-out infinite}
+/* Party hat on top of cat card */
+.hat{display:none;position:absolute;top:-22px;left:50%;transform:translateX(-46%) rotate(-14deg);font-size:24px;z-index:5;pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+.with-hat .hat{display:block}
+/* Flower/butterfly burst on button click */
+@keyframes floralBurst{0%{transform:translateY(0) scale(.4) rotate(0deg);opacity:0}15%{opacity:1}100%{transform:translateY(-120px) scale(1.2) rotate(var(--spin,40deg));opacity:0}}
+.floral-piece{position:absolute;pointer-events:none;z-index:999;font-size:16px;animation:floralBurst .9s ease-out forwards}
+
+/* ===== CARDS ===== */
+.cards{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.choice{border:0;background:#fff7f7;border:1px solid #d9577325;border-radius:18px;padding:14px;font-family:Caveat;font-size:24px;color:var(--ink);cursor:pointer;box-shadow:0 5px 15px #63323e0c;transition:.25s;text-align:left}
+.choice:hover{transform:translateX(5px);background:#fff;border-color:var(--rose)}
+.choice span{color:var(--rose);margin-right:8px}
+
+/* ===== PHOTO GRID (memory collage scene) ===== */
+.photoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px auto;max-width:340px}
+.photo{height:145px;border-radius:18px;overflow:hidden;background:#f8d6de;border:4px solid #fff;box-shadow:0 8px 20px #6a34401c;position:relative}
+.photo:nth-child(2),.photo:nth-child(4){transform:rotate(2deg)}
+.photo:nth-child(1),.photo:nth-child(5){transform:rotate(-2deg)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9e6975;font-size:12px;background:#fff4}
+
+/* ===== SINGLE PHOTO SCENES — full image, no crop ===== */
+.polaroid{background:#fff;padding:12px 12px 42px;border-radius:6px;box-shadow:0 20px 50px rgba(55,18,28,.18);max-width:280px;margin:0 auto;position:relative;transition:transform .6s}
+/* Show FULL photo — no cropping */
+.polaroid img{width:100%;height:auto;max-height:58vh;object-fit:contain;display:block;border-radius:3px;background:#fde8ed}
+.polaroid .caption{position:absolute;bottom:8px;left:0;right:0;text-align:center;font:24px 'Caveat',cursive;color:var(--muted)}
+.polaroid-slide{transform:rotate(-2deg)}
+.polaroid-zoom{transform:rotate(1.5deg)}
+.polaroid-drop{transform:rotate(-3deg)}
+.polaroid-tilt{transform:rotate(3deg)}
+.polaroid-center{transform:rotate(-1deg)}
+
+/* Photo animations */
+@keyframes slideIn{from{opacity:0;transform:translateX(-60px) rotate(-5deg)}to{opacity:1;transform:rotate(-2deg)}}
+@keyframes zoomIn{from{opacity:0;transform:scale(.8) rotate(1.5deg)}to{opacity:1;transform:scale(1) rotate(1.5deg)}}
+@keyframes dropIn{from{opacity:0;transform:translateY(-80px) rotate(-3deg)}to{opacity:1;transform:rotate(-3deg)}}
+@keyframes rotateIn{from{opacity:0;transform:rotate(-10deg) scale(.9)}to{opacity:1;transform:rotate(3deg)}}
+@keyframes revealGlow{from{opacity:0;filter:blur(10px);transform:scale(.95)}to{opacity:1;filter:blur(0);transform:scale(1) rotate(-1deg)}}
+.anim-slide{animation:slideIn 1s cubic-bezier(.2,.8,.25,1) both}
+.anim-zoom{animation:zoomIn 1s cubic-bezier(.2,.8,.25,1) both}
+.anim-drop{animation:dropIn 1s cubic-bezier(.34,1.56,.64,1) both}
+.anim-rotate{animation:rotateIn 1s cubic-bezier(.2,.8,.25,1) both}
+.anim-reveal{animation:revealGlow 1.2s cubic-bezier(.2,.8,.25,1) both}
+
+/* ===== BIRTHDAY CARD (Scene 10) ===== */
+.bday-card{background:var(--paper);border:2px solid #f0b9c5;border-radius:22px;padding:28px 22px;max-width:360px;margin:0 auto;position:relative;text-align:center;background-image:linear-gradient(rgba(217,87,115,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(217,87,115,.08) 1px,transparent 1px);background-size:22px 22px;box-shadow:0 20px 50px rgba(82,28,42,.14)}
+.bday-card-title{font-family:'Caveat',cursive;font-weight:700;font-size:38px;color:var(--rose);line-height:1.1;margin:10px 0 8px;text-shadow:0 2px 6px rgba(217,87,115,.18)}
+.bday-card-msg{font-family:'Caveat',cursive;font-size:22px;line-height:1.45;color:#4a2d34;white-space:pre-line;margin:10px 0;padding:12px 16px;background:#fff8f9;border-radius:14px;border:1px dashed rgba(217,87,115,.25)}
+.balloon-strip{position:absolute;top:-14px;right:10px;font-size:28px;display:flex;gap:4px;animation:balloonSway 2.5s ease-in-out infinite alternate;pointer-events:none}
+@keyframes balloonSway{from{transform:rotate(-3deg) translateY(0)}to{transform:rotate(3deg) translateY(-8px)}}
+.tape{position:absolute;width:58px;height:18px;border-radius:3px;opacity:.7}
+.tape-tl{background:rgba(248,178,195,.7);top:-7px;left:24px;transform:rotate(-10deg)}
+.tape-tr{background:rgba(254,237,185,.85);top:-7px;right:22px;transform:rotate(8deg)}
+
+/* ===== GIFT BOX ===== */
+.gift{width:175px;height:145px;margin:22px auto;position:relative;cursor:pointer;animation:giftFloat 2.8s infinite}
+.box{position:absolute;bottom:0;left:15px;width:145px;height:92px;background:#e96f89;border-radius:5px 5px 15px 15px}
+.box:before{content:'';position:absolute;left:59px;width:27px;height:92px;background:#ffd7df}
+.lid{position:absolute;z-index:3;top:35px;left:8px;width:160px;height:30px;background:#d65372;border-radius:7px;transition:.7s cubic-bezier(.34,1.56,.64,1)}
+.bow{position:absolute;z-index:5;left:67px;top:10px;width:42px;height:30px;transition:.7s}
+.bow:before,.bow:after{content:'';position:absolute;width:40px;height:26px;background:#ffd7df;border-radius:90% 15% 80% 20%}
+.bow:before{left:-26px;transform:rotate(28deg)}
+.bow:after{right:-26px;transform:scaleX(-1) rotate(28deg)}
+.gift.open .lid{transform:translateY(-44px) rotate(-10deg)}
+.gift.open .bow{transform:translateY(-44px) rotate(-10deg)}
+@keyframes giftFloat{50%{transform:translateY(-8px)}}
+
+/* ===== QUESTION SCREEN ===== */
+.q-no{transition:transform .3s ease,opacity .3s ease}
+
+/* ===== LETTER SCENE (Scene 13) ===== */
+.letter{background:#fffdf8;border-radius:18px;padding:28px 22px;max-width:360px;margin:0 auto;text-align:left;position:relative;box-shadow:0 20px 50px #6935421e;border:1px solid rgba(217,87,115,.18);background-image:repeating-linear-gradient(#fffdf8,#fffdf8 27px,rgba(217,87,115,.14) 28px,rgba(217,87,115,.14) 29px);line-height:29px}
+.letter h2{text-align:center;margin-bottom:14px;line-height:1.2;font-size:32px;color:var(--rose)}
+.lline{font-family:'Caveat',cursive;font-size:22px;color:#3a2229;opacity:0;transform:translateY(8px);transition:opacity .8s ease,transform .8s ease;line-height:29px;display:block}
+.lline.show{opacity:1;transform:none}
+.lline.big{font-size:27px;font-weight:700;color:var(--rose);margin-top:6px}
+.heart-beat{display:inline-block;animation:heartBeat 1s ease-in-out infinite alternate}
+@keyframes heartBeat{from{transform:scale(1)}to{transform:scale(1.3)}}
+
+/* ===== HUG SCENE — cat zooms to fill page ===== */
+.hug-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%}
+.hug-glow{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,190,206,.65) 0%,rgba(255,230,238,.2) 55%,transparent 70%);filter:blur(22px);opacity:0;transition:opacity 2s ease,transform 2s ease;z-index:0}
+.hug-glow.on{opacity:1;transform:scale(1.4)}
+/* Hug cat: starts small, zooms to fill */
+.hug-cat{position:relative;z-index:5;transition:transform 3.2s cubic-bezier(.2,.8,.25,1)}
+.hug-cat-img{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:center 18%;border:5px solid #fff;box-shadow:0 14px 32px rgba(78,25,39,.18);display:block;transition:width 3.2s cubic-bezier(.2,.8,.25,1),height 3.2s cubic-bezier(.2,.8,.25,1),border-radius 2.5s ease,border 2.5s ease,box-shadow 2.5s ease}
+.hug-cat-img.filling{width:110vw;height:110vh;border-radius:0;border:none;box-shadow:none;object-position:center 18%}
+.hug-overlay-text{position:absolute;z-index:20;bottom:14%;left:0;right:0;text-align:center;opacity:0;transition:opacity 1s ease}
+.hug-overlay-text.show{opacity:1}
+.hug-arms{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:220px;height:110px;pointer-events:none;opacity:0;transition:opacity .8s ease;z-index:10}
+.arm{position:absolute;top:38px;width:48px;height:36px;background:#fff5f2;border:2.5px solid rgba(217,87,115,.3);border-radius:18px;box-shadow:0 6px 14px rgba(78,25,39,.1);transition:transform 1.4s cubic-bezier(.18,.89,.32,1.28)}
+.arm-l{left:0;transform:rotate(-45deg) translateX(-12px)}
+.arm-r{right:0;transform:rotate(45deg) translateX(12px)}
+.arm:after{content:'🐾';position:absolute;font-size:14px;top:7px;left:13px;opacity:.5}
+.hugging .hug-arms{opacity:1}
+.hugging .arm-l{transform:rotate(15deg) translateX(40px)}
+.hugging .arm-r{transform:rotate(-15deg) translateX(-40px)}
+
+/* ===== FINAL SCREEN ===== */
+.fin-note{background:#fff;border-radius:22px;padding:34px 24px;border:2px solid #f0b9c5;box-shadow:0 20px 50px rgba(82,28,42,.14);max-width:340px;margin:0 auto;text-align:center;position:relative}
+
+/* ===== CONFETTI ===== */
+.confetti{position:absolute;inset:0;pointer-events:none;z-index:10}
+.confetti i{position:absolute;width:7px;height:13px;border-radius:3px;top:-20px;animation:drop 2.4s ease-out forwards}
+@keyframes drop{to{top:105%;transform:rotate(650deg);opacity:0}}
+
+/* ===== FLOATING PARTICLES ===== */
+.particle{position:absolute;pointer-events:none;animation:particleRise 3.5s ease-out forwards;font-size:18px;opacity:.9}
+@keyframes particleRise{0%{transform:translateY(0) scale(.5) rotate(0deg);opacity:0}15%{opacity:.95}90%{opacity:.8}100%{transform:translateY(-650px) scale(1.2) rotate(40deg);opacity:0}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-height:700px){
+  h1{font-size:52px}h2{font-size:36px}
+  .cat-sm .cat-circle{width:64px;height:64px}
+  .cat-md .cat-circle{width:80px;height:80px}
+  .photo{height:115px}
+  .speech{font-size:22px}
+  .polaroid img{max-height:42vh}
+}
+
+/* ===== REDESIGNED SCENE 10 (SCRAPBOOK STYLE) ===== */
+.scrap-scene {
+  background: #fff9f5 !important;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 14px;
+  overflow: hidden;
+}
+
+/* Corner Background Accents */
+.scrap-bg-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(14px);
+  opacity: 0.85;
+}
+.scrap-bg-tl {
+  width: 170px; height: 170px;
+  top: -45px; left: -45px;
+  background: radial-gradient(circle, #cde3f8 0%, #e2effa 70%, transparent 100%);
+}
+.scrap-bg-tr {
+  width: 160px; height: 160px;
+  top: -40px; right: -40px;
+  background: radial-gradient(circle, #fcdce4 0%, #fdeaf0 70%, transparent 100%);
+}
+.scrap-bg-bl {
+  width: 170px; height: 170px;
+  bottom: -50px; left: -50px;
+  background: radial-gradient(circle, #fcdce4 0%, #fdeaf0 70%, transparent 100%);
+}
+.scrap-bg-br {
+  width: 160px; height: 160px;
+  bottom: -40px; right: -40px;
+  background: radial-gradient(circle, #cde3f8 0%, #e2effa 70%, transparent 100%);
+}
+
+/* Background Doodles */
+.scrap-doodle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  font-family: 'Caveat', cursive;
+  user-select: none;
+}
+.star-top-left { top: 22px; left: 22px; font-size: 24px; color: #a4c9f0; transform: rotate(-12deg); }
+.heart-top-right { top: 22px; right: 24px; font-size: 28px; color: #eb5275; font-weight: bold; transform: rotate(15deg); }
+.paw-bottom-left { bottom: 95px; left: 14px; font-size: 22px; opacity: 0.7; transform: rotate(-20deg); }
+.paw-bottom-right { bottom: 95px; right: 14px; font-size: 22px; opacity: 0.7; transform: rotate(20deg); }
+.heart-bottom-center { bottom: 14px; left: 50%; transform: translateX(-50%); font-size: 22px; color: #eb5275; }
+
+.scrap-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 0;
+}
+
+/* Header */
+.scrap-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.crown-icon {
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: center;
+  animation: crownBounce 2.5s ease-in-out infinite alternate;
+}
+@keyframes crownBounce {
+  from { transform: translateY(0) rotate(-2deg); }
+  to { transform: translateY(-4px) rotate(2deg); }
+}
+.scrap-title-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.sparkle-rays-left, .sparkle-rays-right {
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #f4ad38;
+  letter-spacing: -2px;
+  user-select: none;
+}
+.scrap-title-main {
+  font-family: 'Fredoka', 'Mali', 'Caveat', sans-serif, cursive;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.8px;
+  color: #2b2728;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.scrap-subtitle-wrap {
+  position: relative;
+  display: inline-block;
+  margin-top: 1px;
+}
+.scrap-title-sub {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 46px;
+  color: #eb5275;
+  line-height: 0.9;
+  letter-spacing: 1px;
+}
+.heart-inline {
+  font-size: 34px;
+  margin-left: 2px;
+  display: inline-block;
+  transform: rotate(8deg);
+}
+.pink-swash {
+  display: block;
+  margin: -3px auto 0;
+}
+
+/* Main Cards Container */
+.scrap-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  margin: 12px 0 14px;
+  position: relative;
+}
+
+/* Pink Sticky Note */
+.scrap-card-pink {
+  flex: 1;
+  max-width: 195px;
+  background: #fde8ed;
+  background-image: 
+    linear-gradient(#f9d4dc 1px, transparent 1px),
+    linear-gradient(90deg, #f9d4dc 1px, transparent 1px);
+  background-size: 16px 16px;
+  border-radius: 6px;
+  padding: 18px 14px 16px 14px;
+  box-shadow: 2px 8px 20px rgba(180, 80, 100, 0.14);
+  transform: rotate(-3.5deg);
+  position: relative;
+  border: 1px solid #f8ced7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.scrap-card-pink:hover {
+  transform: rotate(-1deg) scale(1.02);
+}
+.washi-top-left {
+  position: absolute;
+  top: -9px;
+  left: 10px;
+  width: 56px;
+  height: 18px;
+  background: #f890a5;
+  background-image: radial-gradient(#fff 22%, transparent 22%);
+  background-size: 8px 8px;
+  opacity: 0.88;
+  transform: rotate(-10deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 2px;
+}
+.pink-note-content {
+  font-family: 'Caveat', cursive;
+  color: #2e2326;
+  text-align: left;
+}
+.pink-note-line1 {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  position: relative;
+  margin-bottom: 8px;
+}
+.pink-note-line1::after {
+  content: '';
+  display: block;
+  width: 75%;
+  height: 3px;
+  background: #eb5275;
+  opacity: 0.65;
+  border-radius: 2px;
+  margin-top: 4px;
+}
+.pink-note-line2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.doodle-h {
+  color: #eb5275;
+  font-weight: bold;
+  margin-left: 2px;
+  display: inline-block;
+}
+
+/* Polaroid Card */
+.scrap-card-polaroid {
+  flex: 1;
+  max-width: 195px;
+  background: #ffffff;
+  padding: 10px 10px 20px 10px;
+  border-radius: 4px;
+  box-shadow: 4px 10px 24px rgba(60, 30, 40, 0.15);
+  transform: rotate(3.5deg);
+  position: relative;
+  border: 1px solid #f0e6e2;
+  transition: transform 0.3s ease;
+}
+.scrap-card-polaroid:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+.washi-polaroid {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  background: #fcdce4;
+  border: 1px dashed #f6adc1;
+  padding: 2px 10px;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  z-index: 3;
+}
+.washi-polaroid span {
+  font-size: 10px;
+  color: #eb5275;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.polaroid-photo-frame {
+  width: 145px;
+  height: 168px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  position: relative;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.08);
+}
+.polaroid-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+}
+.polaroid-doodles {
+  position: absolute;
+  right: -12px;
+  bottom: 12px;
+  pointer-events: none;
+}
+.p-heart {
+  display: block;
+  font-family: 'Caveat', cursive;
+  color: #eb5275;
+  font-weight: bold;
+}
+.ph-1 { font-size: 22px; transform: rotate(15deg); }
+.ph-2 { font-size: 17px; margin-top: -8px; margin-left: 8px; transform: rotate(-10deg); }
+
+/* Bottom Tag Banner */
+.scrap-bottom-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 2px;
+}
+.paw-accent {
+  font-size: 20px;
+  opacity: 0.85;
+}
+.paw-l { transform: rotate(-15deg); }
+.paw-r { transform: rotate(15deg); }
+
+.banner-paper {
+  background: #fffdf8;
+  border: 1.5px dashed #f4b8c7;
+  border-radius: 12px;
+  padding: 8px 22px 6px;
+  box-shadow: 0 6px 16px rgba(100, 50, 60, 0.08);
+  position: relative;
+  text-align: center;
+}
+.banner-text {
+  font-family: 'Fredoka', 'Caveat', cursive;
+  font-weight: 600;
+  font-size: 22px;
+  color: #2b2426;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.banner-swash {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2px;
+}
+.banner-mini-heart {
+  position: absolute;
+  top: 1px;
+  font-size: 10px;
+  color: #2b2426;
+}
+.bottom-sparkle-heart {
+  margin-top: 4px;
+  text-align: center;
+}
+.sparkle-h {
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  color: #eb5275;
+  font-weight: bold;
+  display: inline-block;
+  animation: heartPulse 2s ease-in-out infinite alternate;
+}
+@keyframes heartPulse {
+  from { transform: scale(1) rotate(-5deg); }
+  to { transform: scale(1.15) rotate(5deg); }
+}
+
+@media(max-height: 700px) {
+  .scrap-title-main { font-size: 26px; }
+  .scrap-title-sub { font-size: 38px; }
+  .scrap-card-pink, .scrap-card-polaroid { max-width: 170px; }
+  .polaroid-photo-frame { height: 140px; }
+  .banner-text { font-size: 19px; }
+  .pink-note-line1 { font-size: 18px; }
+  .pink-note-line2 { font-size: 17px; }
+}
+  </style>
 </head>
 <body>
 <div class="app papergrid">
-<div class="progress"><span id="progress"></span></div>
+  <div class="progress"><span id="progress"></span></div>
+  <button id="musicBtn" class="music-btn" style="display:none" onclick="toggleMute()">🔊</button>
+  <div id="particles" class="particles-layer"></div>
 
-<section class="screen active" id="s0">
-  <div class="content lock">
-    <div class="lockIcon">🔐</div><div class="eyebrow">private little place</div>
-    <h2>Something is<br>waiting for you…</h2>
-    <p class="sub">Enter the secret code to unlock the birthday surprise.</p>
-    <input id="password" class="pass" type="password" inputmode="numeric" maxlength="10" placeholder="••••••••••">
-    <div class="error" id="error"></div><button class="btn dark" onclick="unlock()">Unlock ♡</button>
-  </div>
-</section>
-
-<section class="screen soft" id="s1">
-  <div class="blob"></div>
-  <div class="content">
-    <div class="eyebrow white">September 25</div>
-    <div class="speech">pssst… <b>hey you!</b><br>guess what? ♡</div>
-    <h1 class="white" style="margin-top:20px">It's your<br>special day!</h1>
-    <p class="sub white-sub">Your tiny birthday guide has arrived. Follow the cat. It knows where the surprises are hiding. 🐾</p>
-    <button class="btn" onclick="go(2)">Let's go →</button>
-  </div>
-  <img class="cat" src="assets/cat.jpg" alt="birthday cat">
-</section>
-
-<section class="screen papergrid" id="s2">
-  <div class="content">
-    <div class="speech">Before we continue…<br><b>how are you today?</b> ♡</div>
-    <div class="cards">
-      <button class="choice" onclick="mood('good')"><span>♥</span> I'm good :)</button>
-      <button class="choice" onclick="mood('tired')"><span>♥</span> A little tired…</button>
-      <button class="choice" onclick="mood('bad')"><span>♥</span> Not so great…</button>
+  <!-- ======== SCENE 0: PASSWORD ======== -->
+  <section class="screen active papergrid" id="s0">
+    <div class="content lock">
+      <div class="lockIcon">🔐</div>
+      <div class="eyebrow">private little place</div>
+      <h2>Something is<br>waiting for you…</h2>
+      <p class="sub">Enter the secret code to unlock the birthday surprise.</p>
+      <input id="password" class="pass" type="password" inputmode="numeric" maxlength="10" placeholder="••••••••••" autocomplete="off">
+      <div class="error" id="error"></div>
+      <button class="btn dark" onclick="unlock()">Unlock ♡</button>
     </div>
-  </div>
-  <img class="cat small" src="assets/cat.jpg" alt="cat guide">
-</section>
-
-<section class="screen soft" id="s3">
-  <div class="content">
-    <div class="speech" id="moodText">Okay… then let's make today <b>better!</b> ✨</div>
-    <h2 style="color:white;margin-top:25px">A little reminder…</h2>
-    <p class="sub white-sub">Whatever kind of day it has been, you made it here. That's enough reason for a tiny celebration.</p>
-    <div style="font-size:60px;margin:20px">🫶</div>
-    <button class="btn" onclick="go(4)">There's more →</button>
-  </div>
-  <img class="cat" src="assets/cat.jpg" alt="cat guide">
-</section>
-
-<section class="screen papergrid" id="s4">
-  <div class="content">
-    <div class="eyebrow">the memory corner</div><h2>A few little<br>moments ♡</h2>
-    <p class="sub">Replace these five spaces with your favourite photos. The page keeps the same soft scrapbook aesthetic.</p>
-    <div class="photoGrid">
-      <div class="photo"><img src="assets/photo1.jpg" onerror="this.style.display='none'"><label>PHOTO 1</label></div>
-      <div class="photo"><img src="assets/photo2.jpg" onerror="this.style.display='none'"><label>PHOTO 2</label></div>
-      <div class="photo"><img src="assets/photo3.jpg" onerror="this.style.display='none'"><label>PHOTO 3</label></div>
-      <div class="photo"><img src="assets/photo4.jpg" onerror="this.style.display='none'"><label>PHOTO 4</label></div>
-      <div class="photo" style="grid-column:1/-1"><img src="assets/photo5.jpg" onerror="this.style.display='none'"><label>PHOTO 5</label></div>
+    <!-- Cat visible on password screen too -->
+    <div class="cat-corner cat-br cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="birthday cat"></div>
     </div>
-    <button class="btn dark" onclick="go(5)">Keep going →</button>
-  </div>
-</section>
+  </section>
 
-<section class="screen soft" id="s5">
-  <div class="content">
-    <div class="speech">The cat found <b>something!</b><br>Don't touch it yet… 👀</div>
-    <h2 class="white" style="margin-top:20px">There's a gift<br>for you.</h2>
-    <div class="gift" id="gift" onclick="openGift()"><div class="box"></div><div class="lid"></div><div class="bow"></div></div>
-    <div class="eyebrow white" id="giftHint">tap the gift</div>
-  </div>
-  <img class="cat right" src="assets/cat.jpg" alt="cat guide">
-</section>
-
-<section class="screen papergrid" id="s6">
-  <div class="content">
-    <div class="eyebrow">one little question</div>
-    <div class="speech">The cat wants to know…</div>
-    <h2 style="margin-top:25px">Will you let me stay by your side for the rest of your birthdays?</h2>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px">
-      <button class="btn dark" onclick="answer(true)">Yes ♡</button>
-      <button class="btn outline" onclick="answer(false)">No</button>
+  <!-- ======== SCENE 1: CAT ENTERS — LEFT ======== -->
+  <section class="screen soft" id="s1">
+    <div class="blob"></div>
+    <div class="content">
+      <div class="eyebrow white reveal">psst…</div>
+      <div class="speech reveal">Hey you… <br><b>guess what?</b> ♡</div>
+      <h1 class="white reveal" style="margin-top:20px">It's your<br>special day!</h1>
+      <p class="sub white-sub reveal">Your tiny birthday guide has arrived.<br>Follow the cat. 🐾</p>
+      <button class="btn reveal" onclick="go(2)">Let's go →</button>
     </div>
-    <p class="tiny" id="answerText"></p>
-  </div>
-  <img class="cat small" src="assets/cat.jpg" alt="cat guide">
-</section>
-
-<section class="screen soft" id="s7">
-  <div class="content">
-    <div class="eyebrow white">last gift</div><div class="hug"></div>
-    <h1 class="white">A virtual hug<br>for you. ♡</h1>
-    <p class="sub white-sub">Consider this the warmest little pause in the middle of your day. 🫂</p>
-    <button class="btn" onclick="go(8)">One last note →</button>
-  </div>
-</section>
-
-<section class="screen papergrid" id="s8">
-  <div class="content">
-    <div class="note">
-      <div class="eyebrow">September 25 · birthday edition</div>
-      <h2>Happy Birthday! 🎂</h2>
-      <p>May your days be filled with happiness, kindness, ridiculous laughter, beautiful memories, and people who make you feel at home.</p>
-      <div class="hand" style="font-size:29px;color:var(--rose)">You are very special. ♡</div>
-      <div class="paw">🐾 🐾 🐾</div>
+    <div class="cat-corner cat-bl with-hat cat-anim-float">
+      <div class="hat">🎀</div>
+      <div class="cat-card"><img src="assets/cat.jpg" alt="birthday cat"></div>
     </div>
-    <button class="btn dark" onclick="restart()">Replay ↻</button>
-  </div>
-  <div class="confetti" id="confetti"></div>
-</section>
+  </section>
+
+  <!-- ======== SCENE 2: BIRTHDAY REVEAL — RIGHT ======== -->
+  <section class="screen soft" id="s2">
+    <div class="blob"></div>
+    <div class="content">
+      <div class="eyebrow white reveal">countdown</div>
+      <h1 class="white reveal" id="dateReveal" style="font-size:52px">25 SEPTEMBER</h1>
+      <h2 class="white reveal" style="margin-top:8px">YOUR DAY ♡</h2>
+      <p class="sub white-sub reveal">Today is all about you. ✨</p>
+      <button class="btn reveal" onclick="go(3)">Continue →</button>
+    </div>
+    <div class="cat-corner cat-br with-hat cat-anim-bounce">
+      <div class="hat">🎉</div>
+      <div class="cat-card"><img src="assets/cat.jpg" alt="birthday cat"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 3: HOW ARE YOU? — TOP-LEFT cat ======== -->
+  <section class="screen papergrid" id="s3">
+    <div class="content">
+      <div class="eyebrow reveal">check in</div>
+      <div class="speech reveal" style="transition-delay:.1s">How are you today? ♥</div>
+      <div class="cards reveal" style="transition-delay:.2s">
+        <button class="choice" onclick="mood('good')"><span>✨</span> I'm good :)</button>
+        <button class="choice" onclick="mood('tired')"><span>😴</span> A little tired…</button>
+        <button class="choice" onclick="mood('bad')"><span>😔</span> Not so great…</button>
+      </div>
+    </div>
+    <div class="cat-corner cat-tl cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat guide"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 4: CAT GUIDES — RIGHT ======== -->
+  <section class="screen soft" id="s4">
+    <div class="blob"></div>
+    <div class="content">
+      <div class="speech reveal" id="moodReply">You made it here, that's what matters. <b>Something sweet is coming.</b> ♡</div>
+      <h2 class="white reveal" style="margin-top:22px">Come on…</h2>
+      <p class="sub white-sub reveal">I want to show you something. 🐾</p>
+      <button class="btn reveal" onclick="go(5)">Let's see →</button>
+    </div>
+    <div class="cat-corner cat-tr with-hat cat-anim-walk">
+      <div class="hat">🎈</div>
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat guide"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 5: PHOTO 1 — RIGHT cat ======== -->
+  <section class="screen papergrid" id="s5">
+    <div class="content">
+      <div class="eyebrow reveal">my cutieee</div>
+      <div class="polaroid polaroid-slide anim-slide reveal" style="transition-delay:.1s">
+        <img src="assets/pic1.jpeg" onerror="this.src='assets/photo1.jpg';this.onerror=null" alt="memory 1">
+        <div class="caption">you ♡</div>
+      </div>
+      <div class="speech reveal" style="margin-top:14px;transition-delay:.35s;font-size:21px">Look how lovely you are… 🥺♡</div>
+      <button class="btn reveal" style="transition-delay:.5s" onclick="go(6)">Next memory →</button>
+    </div>
+    <div class="cat-corner cat-br cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat peeking"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 6: PHOTO 2 — LEFT cat ======== -->
+  <section class="screen soft" id="s6">
+    <div class="blob"></div>
+    <div class="content">
+      <div class="eyebrow white reveal">mineeee</div>
+      <div class="polaroid polaroid-zoom anim-zoom reveal" style="transition-delay:.1s">
+        <img src="assets/pic2.jpeg" onerror="this.src='assets/photo2.jpg';this.onerror=null" alt="memory 2">
+        <div class="caption" style="color:#c8798a">mine ♡</div>
+      </div>
+      <button class="btn reveal" style="transition-delay:.4s" onclick="go(7)">Next memory →</button>
+    </div>
+    <div class="cat-corner cat-tl cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat peeking"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 7: PHOTO 3 — RIGHT cat ======== -->
+  <section class="screen papergrid" id="s7">
+    <div class="content">
+      <div class="eyebrow reveal">you and me</div>
+      <div class="polaroid polaroid-drop anim-drop reveal" style="transition-delay:.1s">
+        <img src="assets/pic3.jpeg" onerror="this.src='assets/photo3.jpg';this.onerror=null" alt="memory 3">
+        <div class="caption">every second ✨</div>
+      </div>
+      <div class="speech reveal" style="margin-top:14px;transition-delay:.35s;font-size:21px">Just looking at this makes me smile 🌸</div>
+      <button class="btn reveal" style="transition-delay:.5s" onclick="go(8)">Next memory →</button>
+    </div>
+    <div class="cat-corner cat-br cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat peeking"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 8: PHOTO 4 — LEFT cat ======== -->
+  <section class="screen soft" id="s8">
+    <div class="blob"></div>
+    <div class="content">
+      <div class="eyebrow white reveal">awwww...</div>
+      <div class="polaroid polaroid-tilt anim-rotate reveal" style="transition-delay:.1s">
+        <img src="assets/pic4.jpeg" onerror="this.src='assets/photo4.jpg';this.onerror=null" alt="memory 4">
+        <div class="caption">🐾🐾 with you</div>
+      </div>
+      <button class="btn reveal" style="transition-delay:.4s" onclick="go(9)">Next memory →</button>
+    </div>
+    <div class="cat-corner cat-tl cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat peeking"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 9: PHOTO 5 — RIGHT cat ======== -->
+  <section class="screen papergrid" id="s9">
+    <div class="content">
+      <div class="eyebrow reveal">love uuuuuu...</div>
+      <div class="polaroid polaroid-center anim-reveal reveal" style="transition-delay:.1s">
+        <img src="assets/pic5.jpeg" onerror="this.src='assets/photo5.jpg';this.onerror=null" alt="memory 5">
+        <div class="caption">you make everything brighter ☀️</div>
+      </div>
+      <div class="speech reveal" style="margin-top:14px;transition-delay:.35s;font-size:21px">Now comes the biggest surprise… 💖</div>
+      <button class="btn dark reveal" style="transition-delay:.5s" onclick="go(10)">Open birthday card 💌 →</button>
+    </div>
+    <div class="cat-corner cat-br cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat peeking"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 10: MAIN BIRTHDAY CARD (REDESIGNED SCRAPBOOK) ======== -->
+  <section class="screen scrap-scene" id="s10">
+    <!-- Corner Background Accents -->
+    <div class="scrap-bg-corner scrap-bg-tl"></div>
+    <div class="scrap-bg-corner scrap-bg-tr"></div>
+    <div class="scrap-bg-corner scrap-bg-bl"></div>
+    <div class="scrap-bg-corner scrap-bg-br"></div>
+
+    <!-- Background Doodles -->
+    <div class="scrap-doodle star-top-left">⭐</div>
+    <div class="scrap-doodle heart-top-right">♡</div>
+    <div class="scrap-doodle paw-bottom-left">🐾</div>
+    <div class="scrap-doodle paw-bottom-right">🐾</div>
+    <div class="scrap-doodle heart-bottom-center">♡</div>
+
+    <div class="content scrap-content">
+      <!-- Crown Icon & Header -->
+      <div class="scrap-header reveal">
+        <div class="crown-icon">
+          <svg width="44" height="32" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 25L8 10L17 18L21 4L25 18L34 10L38 25H4Z" stroke="#f4ad38" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="7" r="2.5" fill="#f4ad38"/>
+            <circle cx="21" cy="2.5" r="2.5" fill="#f4ad38"/>
+            <circle cx="34" cy="7" r="2.5" fill="#f4ad38"/>
+            <path d="M16 1.5L14 -1M26 1.5L28 -1" stroke="#f4ad38" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="scrap-title-wrap">
+          <span class="sparkle-rays-left">\\\</span>
+          <h1 class="scrap-title-main">HAPPY BIRTHDAY</h1>
+          <span class="sparkle-rays-right">///</span>
+        </div>
+        <div class="scrap-subtitle-wrap">
+          <h2 class="scrap-title-sub">LOML <span class="heart-inline">♡</span></h2>
+          <svg class="pink-swash" width="130" height="12" viewBox="0 0 130 12" fill="none">
+            <path d="M3 8C35 2 95 2 127 8" stroke="#eb5275" stroke-width="4.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Main Two Cards Layout -->
+      <div class="scrap-cards-container reveal" style="transition-delay:.15s">
+        <!-- Left Pink Sticky Note -->
+        <div class="scrap-card-pink">
+          <div class="washi-top-left"></div>
+          <div class="pink-note-content">
+            <p class="pink-note-line1">Dont stop being yourself <span class="doodle-h">♡</span></p>
+            <p class="pink-note-line2">The childishness in you makes who you are <span class="doodle-h">♡</span></p>
+          </div>
+        </div>
+
+        <!-- Right Polaroid Frame -->
+        <div class="scrap-card-polaroid">
+          <div class="washi-polaroid">
+            <span>♡ ♡ ♡</span>
+          </div>
+          <div class="polaroid-photo-frame">
+            <img src="assets/cat.jpg" alt="birthday cat" class="polaroid-cat-img">
+          </div>
+          <div class="polaroid-doodles">
+            <span class="p-heart ph-1">♡</span>
+            <span class="p-heart ph-2">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Tag Banner -->
+      <div class="scrap-bottom-banner reveal" style="transition-delay:.3s">
+        <div class="paw-accent paw-l">🐾</div>
+        <div class="banner-paper">
+          <p class="banner-text">Happy Birthday My BBG</p>
+          <div class="banner-swash">
+            <svg width="140" height="10" viewBox="0 0 140 10" fill="none">
+              <path d="M4 6C40 2 100 2 136 6" stroke="#eb5275" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span class="banner-mini-heart">♥</span>
+          </div>
+        </div>
+        <div class="paw-accent paw-r">🐾</div>
+      </div>
+
+      <div class="bottom-sparkle-heart reveal" style="transition-delay:.35s">
+        <span class="sparkle-h">♡</span>
+      </div>
+
+      <button class="btn dark reveal" style="margin-top:14px;transition-delay:.4s" onclick="go(11)">There's a gift too! 🎁 →</button>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 11: GIFT BOX — LEFT cat ======== -->
+  <section class="screen soft" id="s11">
+    <div class="blob"></div>
+    <div class="content">
+      <div class="speech reveal">There's something else for you… 👀<br><b>tap the gift to open it!</b></div>
+      <div class="gift reveal" id="gift" style="transition-delay:.2s" onclick="openGift()">
+        <div class="box"></div>
+        <div class="lid"></div>
+        <div class="bow"></div>
+      </div>
+      <div class="eyebrow white reveal" id="giftHint" style="transition-delay:.3s">tap the gift</div>
+    </div>
+    <div class="cat-corner cat-tl cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat guide"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 12: IMPORTANT QUESTION — BOTTOM-RIGHT cat ======== -->
+  <section class="screen papergrid" id="s12">
+    <div class="content">
+      <div class="eyebrow reveal">one little question</div>
+      <div class="speech reveal" style="transition-delay:.1s">The cat wants to know…</div>
+      <h2 class="reveal" style="margin-top:22px;transition-delay:.2s">Will you let me stay by your side<br>for the rest of your birthdays?</h2>
+      <div class="reveal" style="transition-delay:.35s;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px">
+        <button class="btn dark" onclick="answer(true)">YES ♡</button>
+        <button class="btn outline q-no" id="noBtn" onclick="dodgeNo()">NO</button>
+      </div>
+      <p class="tiny" id="answerText"></p>
+      <button class="btn dark" id="continueAfterYes" style="display:none;margin-top:8px" onclick="go(13)">Continue →</button>
+    </div>
+    <div class="cat-corner cat-br cat-sm cat-anim-peek">
+      <div class="cat-card"><img src="assets/cat.jpg" alt="cat guide"></div>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 13: THE LETTER ======== -->
+  <section class="screen papergrid" id="s13">
+    <div class="content" style="display:flex;flex-direction:column;gap:10px;padding-top:10px">
+      <div class="letter" id="letter">
+        <!-- EXACT LETTER TEXT — DO NOT CHANGE -->
+        <h2>HAPPY BIRTHDAY MY BBG</h2>
+        <span class="lline" id="ll1">I love how weird u are</span>
+        <span class="lline" id="ll2">I love how silly u are</span>
+        <span class="lline" id="ll3">I love how u smile after all the dumb things we do</span>
+        <span class="lline" id="ll4">I love how u care for me after fights</span>
+        <span class="lline" id="ll5">I love how u say everything to me</span>
+        <span class="lline" id="ll6">I love ur eyes , hair .. everything</span>
+        <span class="lline big" id="ll7">I LOVE YOUU 🎀💕 <span class="heart-beat">💖</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-top:4px">
+        <img src="assets/cat.jpg" alt="cat" style="width:58px;height:58px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 12px rgba(78,25,39,.12)">
+        <span style="font-family:'Caveat',cursive;font-size:19px;color:var(--muted)">reading with you… 🐾♡</span>
+      </div>
+      <button class="btn dark" id="letterNext" style="display:none;margin-top:6px" onclick="go(14)">One last warm gift 🫂 →</button>
+    </div>
+  </section>
+
+  <!-- ======== SCENE 14: VIRTUAL HUG — cat fills the entire page naturally ======== -->
+  <section class="screen" id="s14" style="padding:0;overflow:hidden;background:#fff5f7">
+    <!-- Full-page cat sticker -->
+    <img id="hugCatImg" src="assets/cat.jpg" alt="hugging cat"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;
+             transform:scale(.55) translateY(18%);transition:transform 3.2s cubic-bezier(.2,.8,.25,1),opacity .5s ease;opacity:1">
+    <!-- Floating sparkles layer -->
+    <div id="hugSparkles" style="position:absolute;inset:0;z-index:2;pointer-events:none"></div>
+    <!-- Overlay text -->
+    <div id="hugSpeech" style="position:absolute;top:14%;left:0;right:0;text-align:center;z-index:10;opacity:0;transition:opacity .8s ease;padding:0 24px">
+      <span style="font-family:'Caveat',cursive;font-size:28px;color:#fff;font-weight:700;
+                   text-shadow:0 2px 12px rgba(190,50,86,.6),0 0 30px rgba(255,180,200,.5)">
+        💞 Come here…
+      </span>
+    </div>
+    <div id="hugOverlay" style="position:absolute;bottom:22%;left:0;right:0;text-align:center;z-index:10;opacity:0;transition:opacity 1.2s ease;padding:0 20px">
+      <div style="font-family:'Caveat',cursive;font-size:32px;color:#fff;font-weight:700;
+                  text-shadow:0 2px 14px rgba(190,50,86,.7),0 0 40px rgba(255,150,180,.6)">
+        Here's your virtual hug ♡
+      </div>
+      <div style="font-family:'Caveat',cursive;font-size:24px;color:#ffe0e8;margin-top:8px;
+                  text-shadow:0 1px 8px rgba(180,40,70,.5)">Happy Birthday, LOML 🫂💖</div>
+    </div>
+    <button class="btn" id="hugNext"
+      style="display:none;position:absolute;bottom:7%;left:50%;transform:translateX(-50%);z-index:40;background:rgba(255,255,255,.92)"
+      onclick="go(15)">Finish with love ♡ →</button>
+  </section>
+
+  <!-- ======== SCENE 15: FINAL SCREEN ======== -->
+  <section class="screen soft" id="s15">
+    <div class="blob"></div>
+    <div class="content">
+      <div class="fin-note">
+        <div class="tape tape-tl"></div>
+        <div class="tape tape-tr"></div>
+        <!-- Full cat, no crop, no dark border -->
+        <div style="display:flex;justify-content:center;margin-bottom:10px">
+          <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;background:#fff;border:3px solid rgba(255,255,255,.95);box-shadow:0 8px 22px rgba(78,25,39,.15);animation:catCornerBounce 1.8s ease-in-out infinite">
+            <img src="assets/cat.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;background:#fff;border-radius:50%" alt="celebration cat">
+          </div>
+        </div>
+        <h1 class="reveal" style="font-size:38px;color:var(--rose)">Happy Birthday, LOML ♡</h1>
+        <div class="eyebrow reveal" style="margin-top:10px;transition-delay:.15s">25 • 09</div>
+        <p class="hand reveal" style="font-size:26px;color:var(--ink);margin-top:12px;line-height:1.3;transition-delay:.3s">Thank you for being you. 💖</p>
+        <button class="btn dark reveal" style="width:100%;margin-top:16px;transition-delay:.45s" onclick="restart()">Replay ↻</button>
+      </div>
+      <div class="confetti" id="confetti"></div>
+    </div>
+  </section>
 </div>
+
+<audio id="bgAudio" loop preload="auto">
+  <source src="assets/The Police - Every Breath You Take (Official Music Video) - ThePoliceVEVO.mp3" type="audio/mpeg">
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-const PASS='2352026';let current=0;const total=9;
-function unlock(){const p=document.getElementById('password');if(p.value===PASS){go(1)}else{document.getElementById('error').textContent='That code isn't right… try again ♡';p.value='';p.focus()}}
-document.getElementById('password').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
-function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');current=n;document.getElementById('progress').style.width=(n/(total-1)*100)+'%';if(n===8)confetti()}
-function mood(x){const t=document.getElementById('moodText');t.innerHTML=x==='good'?'Yay! Then let\'s make it <b>even better!</b> ✨':x==='tired'?'Then the cat prescribes a tiny dose of <b>birthday happiness.</b> 🐾':'Then stay here for a moment. <b>Something sweet is coming.</b> ♡';setTimeout(()=>go(3),450)}
-function openGift(){const g=document.getElementById('gift');if(g.classList.contains('open'))return;g.classList.add('open');document.getElementById('giftHint').textContent='surprise unlocked ✨';setTimeout(()=>go(6),1000)}
-function answer(yes){document.getElementById('answerText').textContent=yes?'The cat is very happy. 🥹♡':'The cat accepts the answer… but will still send birthday wishes. 🐾♡';setTimeout(()=>go(7),900)}
-function confetti(){const box=document.getElementById('confetti');box.innerHTML='';for(let i=0;i<85;i++){const q=document.createElement('i');q.style.left=Math.random()*100+'%';q.style.animationDelay=Math.random()*.8+'s';q.style.background=['#d95773','#f4a5b5','#f5cc75','#fff','#b6d9c6'][Math.floor(Math.random()*5)];q.style.transform=`rotate(${Math.random()*180}deg)`;box.appendChild(q)}}
-function restart(){document.getElementById('gift').classList.remove('open');document.getElementById('giftHint').textContent='tap the gift';go(0);document.getElementById('password').value=''}
+/* =============================================
+   EDITABLE CONTENT — CHANGE PERSONAL DETAILS HERE
+   ============================================= */
+const birthdayPerson = "LOML";
+const birthdayDate    = "25 SEPTEMBER";
+
+const birthdayCardMessage = `Dont stop being yourself
+The childishness in you makes who you are ❤️🩹`;
+
+const letterLines = [
+  "I love how weird u are",
+  "I love how silly u are",
+  "I love how u smile after all the dumb things we do",
+  "I love how u care for me after fights",
+  "I love how u say everything to me",
+  "I love ur eyes , hair .. everything",
+];
+const letterFinal = `I LOVE YOUU 🎀💕`;
+
+/* =============================================
+   APP STATE
+   ============================================= */
+const PASS = '2352026';
+const TOTAL = 16; // 0–15
+let current = 0;
+let noDodge = 0;
+let audio = document.getElementById('bgAudio');
+let muted = false;
+let audioStarted = false;
+
+/* =============================================
+   PASSWORD
+   ============================================= */
+function unlock(){
+  const p = document.getElementById('password');
+  if(p.value === PASS){
+    document.getElementById('error').textContent = '';
+    spawnBurst(window.innerWidth/2, window.innerHeight*.6, 18);
+    startAudio();
+    setTimeout(()=>go(1), 500);
+  } else {
+    const el = document.getElementById('error');
+    el.textContent = "That code isn't right… try again ♡";
+    p.value = ''; p.focus();
+    el.style.animation='none'; void el.offsetWidth;
+    el.style.animation='shake .4s ease';
+  }
+}
+document.getElementById('password').addEventListener('keydown', e=>{ if(e.key==='Enter') unlock(); });
+
+/* =============================================
+   SCENE TRANSITION ENGINE
+   ============================================= */
+function go(n){
+  if(n < 0 || n >= TOTAL) return;
+  document.querySelectorAll('.screen').forEach(x => x.classList.remove('active'));
+  const screen = document.getElementById('s'+n);
+  if(!screen) return;
+
+  // Update progress bar
+  document.getElementById('progress').style.width = (n/(TOTAL-1)*100)+'%';
+
+  // Brief pause before activating next screen (cinematic)
+  setTimeout(()=>{
+    screen.classList.add('active');
+    current = n;
+
+    // Stagger reveal elements
+    setTimeout(()=>{
+      screen.querySelectorAll('.reveal').forEach((el, i)=>{
+        setTimeout(()=> el.classList.add('show'), i * 120);
+      });
+    }, 80);
+
+    onActivate(n);
+  }, n===0 ? 0 : 320);
+}
+
+function onActivate(n){
+  if(n===2){ spawnBurst(window.innerWidth/2, window.innerHeight*.35, 16); }
+  if(n===10){ spawnConfetti(80); spawnBurst(window.innerWidth/2, window.innerHeight*.25, 22); }
+  if(n===13){ startLetter(); }
+  if(n===14){ startHug(); }
+  if(n===15){ spawnConfetti(120); startHeartLoop(); }
+
+  // fade music per scene
+  if(n===13) fadeAudio(.09, 1500);
+  else if(n===14||n===15) fadeAudio(.22, 1200);
+  else if(n>=1) fadeAudio(.17, 1000);
+
+  // Reset reveal animations when leaving a scene (so they re-animate next visit)
+  document.querySelectorAll('.screen').forEach(s=>{
+    if(!s.classList.contains('active')){
+      s.querySelectorAll('.reveal').forEach(el => el.classList.remove('show'));
+    }
+  });
+}
+
+/* =============================================
+   MOOD SELECTION
+   ============================================= */
+function mood(x){
+  const replies = {
+    good:  "Yay!! Let's make today <b>even more magical!</b> ✨",
+    tired: "Then the cat prescribes a big dose of <b>birthday happiness.</b> 🐾",
+    bad:   "Stay here for a moment. <b>Something sweet is coming.</b> ♡"
+  };
+  document.getElementById('moodReply').innerHTML = replies[x];
+  setTimeout(()=> go(4), 400);
+}
+
+/* =============================================
+   GIFT BOX
+   ============================================= */
+function openGift(){
+  const g = document.getElementById('gift');
+  if(g.classList.contains('open')) return;
+  g.classList.add('open');
+  document.getElementById('giftHint').textContent = 'surprise unlocked ✨';
+  spawnBurst(window.innerWidth/2, window.innerHeight*.5, 20);
+  setTimeout(()=> go(12), 1200);
+}
+
+/* =============================================
+   DODGING "NO" BUTTON
+   ============================================= */
+function dodgeNo(){
+  noDodge++;
+  const btn = document.getElementById('noBtn');
+  const msgs = [
+    "Hey! That button seems slippery… 🥺",
+    "The cat refuses to accept that answer! 🐾♡",
+    "There is only one true answer… 🥰"
+  ];
+  const rx = (Math.random()-.5)*160, ry = (Math.random()-.5)*80;
+  btn.style.transform = `translate(${rx}px,${ry}px) scale(.88)`;
+  document.getElementById('answerText').textContent = msgs[Math.min(noDodge-1, msgs.length-1)];
+  if(noDodge >= 3) btn.style.display = 'none';
+}
+
+function answer(yes){
+  const txt = yes
+    ? "I'm very happy 🥹♡"
+    : "The cat accepts… but will still send love. 🐾♡";
+  document.getElementById('answerText').textContent = txt;
+  if(yes){
+    spawnBurst(window.innerWidth/2, window.innerHeight*.4, 22);
+    // Show a Continue button — don't auto-navigate
+    setTimeout(()=>{
+      const btn = document.getElementById('continueAfterYes');
+      if(btn) btn.style.display = 'inline-block';
+    }, 600);
+  } else {
+    setTimeout(()=> go(13), 950);
+  }
+}
+
+/* =============================================
+   LETTER ANIMATION (line by line)
+   ============================================= */
+function startLetter(){
+  const ids = ['ll1','ll2','ll3','ll4','ll5','ll6','ll7'];
+  ids.forEach(id => document.getElementById(id).classList.remove('show'));
+  document.getElementById('letterNext').style.display = 'none';
+
+  const delays = [1000, 2200, 3600, 5000, 6400, 7800, 9400];
+  ids.forEach((id, i)=>{
+    setTimeout(()=>{
+      document.getElementById(id).classList.add('show');
+      if(id === 'll7'){
+        spawnBurst(window.innerWidth/2, window.innerHeight*.6, 16);
+        setTimeout(()=>{
+          document.getElementById('letterNext').style.display = 'inline-block';
+        }, 1200);
+      }
+    }, delays[i]);
+  });
+}
+
+/* =============================================
+   VIRTUAL HUG SEQUENCE — full-page cat sticker
+   ============================================= */
+function startHug(){
+  const catImg  = document.getElementById('hugCatImg');
+  const speech  = document.getElementById('hugSpeech');
+  const overlay = document.getElementById('hugOverlay');
+  const next    = document.getElementById('hugNext');
+  const sparkles= document.getElementById('hugSparkles');
+
+  // Reset immediately visible with soft warm background
+  catImg.style.transform = 'scale(.55) translateY(18%)';
+  catImg.style.opacity   = '1';
+  speech.style.opacity   = '0';
+  overlay.style.opacity  = '0';
+  next.style.display     = 'none';
+  sparkles.innerHTML     = '';
+
+  // Step 1: show "Come here" text quickly
+  setTimeout(()=>{
+    speech.style.opacity = '1';
+  }, 300);
+
+  // Step 2: cat zooms in to fill page
+  setTimeout(()=>{
+    catImg.style.transform = 'scale(1) translateY(0)';
+    for(let i=0;i<28;i++) setTimeout(spawnHeart, i*110);
+  }, 1600);
+
+  // Step 3: show hug message over the cat
+  setTimeout(()=>{
+    speech.style.opacity = '0';
+    overlay.style.opacity = '1';
+    for(let i=0;i<20;i++) setTimeout(spawnHeart, i*120);
+  }, 4800);
+
+  // Step 4: show finish button
+  setTimeout(()=>{
+    next.style.display = 'inline-block';
+  }, 6800);
+}
+
+/* =============================================
+   AUDIO MANAGEMENT
+   ============================================= */
+function startAudio(){
+  if(audioStarted) return;
+  audio.volume = 0.01;
+  audio.play().then(()=>{
+    audioStarted = true;
+    document.getElementById('musicBtn').style.display = 'flex';
+    fadeAudio(.17, 2000);
+  }).catch(()=>{}); // silently continue if blocked
+}
+
+function toggleMute(){
+  muted = !muted;
+  audio.volume = muted ? 0 : .17;
+  document.getElementById('musicBtn').textContent = muted ? '🔇' : '🔊';
+}
+
+function fadeAudio(target, ms){
+  if(!audioStarted || audio.paused) return;
+  const start = audio.volume, t0 = performance.now();
+  const tick = now => {
+    const p = Math.min((now-t0)/ms, 1);
+    audio.volume = Math.max(0, Math.min(1, start + (target-start)*p));
+    if(p<1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
+/* =============================================
+   PARTICLE EFFECTS
+   ============================================= */
+const HEARTS = ['💖','💕','🌸','✨','🎀','🫶','💗'];
+
+function spawnHeart(){
+  const el = document.createElement('div');
+  el.className = 'particle';
+  el.textContent = HEARTS[Math.floor(Math.random()*HEARTS.length)];
+  el.style.cssText = `left:${6+Math.random()*88}%;bottom:-20px;animation-duration:${3+Math.random()*2}s;font-size:${14+Math.random()*12}px`;
+  document.getElementById('particles').appendChild(el);
+  setTimeout(()=> el.remove(), 5500);
+}
+
+function spawnBurst(cx, cy, count=15){
+  const layer = document.getElementById('particles');
+  for(let i=0;i<count;i++){
+    const el = document.createElement('div');
+    el.textContent = HEARTS[Math.floor(Math.random()*HEARTS.length)];
+    el.style.cssText = `position:absolute;left:${cx}px;top:${cy}px;font-size:${14+Math.random()*12}px;pointer-events:none;transition:all 1.1s cubic-bezier(.18,.89,.32,1.28);opacity:1`;
+    layer.appendChild(el);
+    const angle = (Math.PI*2*i)/count, d = 50+Math.random()*70;
+    requestAnimationFrame(()=>{
+      el.style.transform = `translate(${Math.cos(angle)*d}px,${Math.sin(angle)*d}px) scale(${.8+Math.random()*.6})`;
+      el.style.opacity = '0';
+    });
+    setTimeout(()=> el.remove(), 1200);
+  }
+}
+
+let heartLoop = null;
+function startHeartLoop(){
+  clearInterval(heartLoop);
+  heartLoop = setInterval(spawnHeart, 700);
+}
+
+/* =============================================
+   CONFETTI
+   ============================================= */
+function spawnConfetti(n=70){
+  const box = document.getElementById('confetti');
+  box.innerHTML = '';
+  const colors = ['#d95773','#f4a5b5','#f5cc75','#fff','#b6d9c6'];
+  for(let i=0;i<n;i++){
+    const q = document.createElement('i');
+    q.style.left = Math.random()*100+'%';
+    q.style.animationDelay = Math.random()*.8+'s';
+    q.style.background = colors[Math.floor(Math.random()*colors.length)];
+    q.style.transform = `rotate(${Math.random()*180}deg)`;
+    box.appendChild(q);
+  }
+}
+
+/* =============================================
+   RESTART
+   ============================================= */
+function restart(){
+  clearInterval(heartLoop);
+  document.getElementById('gift').classList.remove('open');
+  document.getElementById('giftHint').textContent = 'tap the gift';
+  document.getElementById('noBtn').style.display = 'inline-block';
+  document.getElementById('noBtn').style.transform = '';
+  document.getElementById('answerText').textContent = '';
+  const cab = document.getElementById('continueAfterYes');
+  if(cab) cab.style.display = 'none';
+  noDodge = 0;
+  go(0);
+  document.getElementById('password').value = '';
+}
+
+/* =============================================
+   INIT
+   ============================================= */
+window.addEventListener('DOMContentLoaded', ()=>{
+  // Kick off scene 0 reveals immediately
+  document.querySelectorAll('#s0 .reveal').forEach((el,i)=>
+    setTimeout(()=>el.classList.add('show'), i*120));
+  // Soft-focus password input
+  setTimeout(()=> document.getElementById('password').focus(), 500);
+
+  // Start audio on very first user interaction anywhere on page
+  const tryAudio = ()=>{ startAudio(); document.removeEventListener('click', tryAudio); document.removeEventListener('touchstart', tryAudio); };
+  document.addEventListener('click', tryAudio, {once:true});
+  document.addEventListener('touchstart', tryAudio, {once:true});
+
+  // ======= FLOWER / BUTTERFLY BURST ON BUTTON CLICK =======
+  const FLORALS = ['🌸','🦋','🌷','✿','🌺','🌼','🦋','💐','🌸','🦋'];
+  document.addEventListener('click', e=>{
+    const btn = e.target.closest('.btn, .choice');
+    if(!btn) return;
+    const app = document.querySelector('.app');
+    const appRect = app.getBoundingClientRect();
+    const btnRect = btn.getBoundingClientRect();
+    const cx = btnRect.left + btnRect.width/2 - appRect.left;
+    const cy = btnRect.top + 10 - appRect.top;
+    const count = 9;
+    for(let i=0; i<count; i++){
+      const el = document.createElement('div');
+      el.className = 'floral-piece';
+      el.textContent = FLORALS[Math.floor(Math.random()*FLORALS.length)];
+      const spread = (i/(count-1)-.5)*140;
+      const up = 60+Math.random()*60;
+      const spin = -180+Math.random()*360;
+      el.style.cssText = `left:${cx + spread*.2}px;top:${cy}px;font-size:${10+Math.random()*10}px;--spin:${spin}deg;animation-duration:${.7+Math.random()*.5}s;animation-delay:${i*40}ms`;
+      app.appendChild(el);
+      setTimeout(()=>el.remove(), 1400);
+    }
+  });
+});
 </script>
 </body>
 </html>
